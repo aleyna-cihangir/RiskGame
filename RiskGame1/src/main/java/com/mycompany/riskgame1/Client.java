@@ -22,8 +22,9 @@ public class Client {
             this.serverPort = serverPort;
 
             this.socket = new Socket(this.serverIp, this.serverPort);
-            this.cInput = new ObjectInputStream(this.socket.getInputStream());
             this.cOutput = new ObjectOutputStream(this.socket.getOutputStream());
+            this.cInput = new ObjectInputStream(this.socket.getInputStream());
+           
             this.cOutput.writeObject("merhaba");
             
         } catch (IOException ex) {
