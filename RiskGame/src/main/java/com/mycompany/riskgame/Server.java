@@ -34,6 +34,8 @@ public class Server {
             ObjectOutputStream cOutput = new ObjectOutputStream(nClient.getOutputStream());
             Object msg = cInput.readObject();
             System.out.println(msg.toString());
+            
+            
              
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
