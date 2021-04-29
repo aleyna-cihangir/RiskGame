@@ -25,6 +25,7 @@ public class Server {
     }
 
     public void ListenSocket() {
+        while(!this.socket.isClosed()){
         try {
             
             Socket nClient = this.socket.accept(); // burada bekler socket = api+port
@@ -43,7 +44,7 @@ public class Server {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    }
 
 
 
