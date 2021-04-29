@@ -26,8 +26,12 @@ public class Client {
             this.cInput = new ObjectInputStream(this.socket.getInputStream());
            
             this.cOutput.writeObject("merhaba");
+            Object msg = cInput.readObject();
+            System.out.println(msg.toString());
             
         } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
